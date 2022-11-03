@@ -7,5 +7,5 @@ export interface Product {
 }
 
 export interface FullProduct extends Product {
-  category: FullCategory[],
+  category: FullCategory | null,
 }

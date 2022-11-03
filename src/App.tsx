@@ -32,7 +32,7 @@ const prepareProducts = (
   return products.map(product => ({
     ...product,
     category: categories
-      .find(category => product.categoryId === category.id),
+      .find(category => product.categoryId === category.id) || null,
   }));
 };
 
@@ -68,7 +68,6 @@ export const App: React.FC = () => {
                 </a>
               ))}
             </p>
-
 
             <div className="panel-block">
               <p className="control has-icons-left has-icons-right">
