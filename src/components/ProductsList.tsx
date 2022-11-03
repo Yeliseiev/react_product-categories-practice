@@ -80,14 +80,16 @@ export const ProductsList: React.FC<Props> = (
 
                 <td data-cy="ProductName">{product.name}</td>
                 <td data-cy="ProductCategory">
-                  {`${product.category.icon} - ${product.category.title}`}
+                  {product.category && `${product.category.icon} - ${product.category.title}` }
                 </td>
 
                 <td
                   data-cy="ProductUser"
                   className="has-text-link"
                 >
-                  {product.category.user.name}
+                  { product.category
+                    && product.category.user
+                    && product.category.user.name}
                 </td>
               </tr>
             );
